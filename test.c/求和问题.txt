@@ -1,0 +1,28 @@
+
+#include<stdio.h>//求和问题
+int main()
+{int i=1;
+ int sum=0;//求1-10的和
+int sumOdd=0;
+ int sumEve=0;
+ while(i<=10)
+ {
+ sum+=i;
+	 i++;
+ }
+printf("%d\n",sum);
+ i=2;//求1-10之间偶数的和
+ while(i<=10)
+ {sumEve+=i;
+  i+=2;
+ }
+printf("%d\n",sumEve);
+i=1;
+ while(i<=10)//求1-10之间奇数的和
+ {sumOdd+=i;
+  i+=2;
+ }
+ printf("%d\n",sumOdd);
+	return 0;
+}
+	
