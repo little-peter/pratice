@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<windows.h>
+int count_bit( unsigned int num)
+{
+	int count = 0;
+	if (num == 0)
+	{
+		return 0;
+	}
+	while (num)
+	{
+		if ( num % 2==1)
+		{
+			count++;
+		}
+		num = num / 2;
+	}
+	
+	return count;
+
+	
+}
+int main()
+{
+	unsigned int num = 0;
+	int ret = 0;
+	printf("请输入一个数值\n");
+	scanf("%d",&num);
+
+	count_bit(num);
+
+	ret = count_bit(num);//用来接收 count_bit(num)的返回值
+
+	printf("count=%d\n", ret);
+
+
+	system("pause");
+	return 0;
+}
