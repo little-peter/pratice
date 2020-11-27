@@ -1,0 +1,38 @@
+//递归和非递归分别实现strlen
+int MyStrlen(const char *str)
+{
+ assert(str);
+ int count = 0;
+ while (*str)
+ {
+ str++;
+ count++;
+ }
+ return count;
+}
+int MyStrlen(const char *str)
+{
+ assert(str);
+ if (*str=='\0')
+ return 0;
+ else
+ return 1 + MyStrlen(str + 1);
+}
+int MyStrlen(const char *str)
+{
+ const char *p = str;
+ while (*p)
+ {
+ p++;
+ }
+ return p - str;
+}
+int main()
+{
+ char arr[] = "abcdefg";
+ int ret = MyStrlen(arr);
+ printf("%d\n", ret);
+ system("pause");
+ return 0;
+
+}
