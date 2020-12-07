@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<windows.h> 
+#include<string.h>
+#include<assert.h>
+char * mystrstr(char* str1,char* str2)
+{
+	char *start =str1;
+	assert(str1);
+	assert(str2);
+	while (*start != '\0')
+	{
+		char* s1 = start;
+		char* s2 = str2;
+		while (*s1&&*s2&&*s1 == *s2)
+		{
+			s1++;
+			s2++;
+		}
+		if (*s2 == '\0')
+		{
+			return start;
+		}
+		start++;//satrt 不等于0且s1!=s2;
+	}
+		return NULL;//到这里说明主串走完还没找到，返回NULL
+	}
+
+int main()
+{
+	char* str1 = "hahahaajsiooo";//主串
+	char* str2 = "ajsi";//子串
+	char*p=mystrstr(str1,str2);
+	printf("%s\n", p);
+	system("pause");
+
+	return 0;
+}
